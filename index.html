@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nasa Yuwe - Aprende la lengua ancestral</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .gradient-background {
+            background: linear-gradient(135deg, #1a365d 0%, #2563eb 100%);
+        }
+
+        .card {
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            border-color: #60a5fa;
+        }
+
+        .glow-button {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            background: linear-gradient(45deg, #3b82f6, #1d4ed8);
+        }
+
+        .glow-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+        }
+
+        .glow-button::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 60%);
+            transform: rotate(45deg);
+            transition: 0.5s;
+        }
+
+        .glow-button:hover::after {
+            transform: rotate(45deg) translate(50%, 50%);
+        }
+
+        .price-tag {
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        .back-to-top {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            cursor: pointer;
+            animation: float 2s ease-in-out infinite;
+        }
+
+        .lesson-card {
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .lesson-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .lesson-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #1a365d;
+        }
+
+        .lesson-content {
+            font-size: 1rem;
+            color: #4b5563;
+            margin-bottom: 1.5rem;
+        }
+
+        .lesson-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .shine {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .shine::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to right,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0.3) 50%,
+                rgba(255, 255, 255, 0) 100%
+            );
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            from { transform: translateX(-100%) rotate(45deg); }
+            to { transform: translateX(100%) rotate(45deg); }
+        }
+
+        .hero-text {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-blue-50">
+    <div class="min-h-screen">
+        <!-- Header -->
+        <nav class="gradient-background text-white shadow-lg p-4">
+            <div class="container mx-auto flex justify-between items-center">
+                <div class="flex items-center gap-3">
+                    <span class="text-3xl">🏠</span>
+                    <h1 class="text-2xl font-bold">Nasa YuweWeb3</h1>
+                </div>
+                <div class="flex items-center gap-6">
+                    <div class="flex items-center gap-2 bg-blue-700 px-4 py-2 rounded-full">
+                        <span>🔥</span>
+                        <span class="font-semibold">15 días</span>
+                    </div>
+                    <div class="flex items-center gap-2 bg-blue-700 px-4 py-2 rounded-full">
+                        <span>💎</span>
+                        <span class="font-semibold">500 puntos</span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <div class="gradient-background text-white py-24 px-4 shine">
+            <div class="container mx-auto text-center">
+                <h1 class="text-5xl font-bold mb-6 hero-text">Aprende Nasa Yuwe</h1>
+                <p class="text-xl mb-12 max-w-2xl mx-auto">Descubre la riqueza cultural del pueblo Nasa a través de su lengua</p>
+                <button onclick="window.location.href='prueba.html'" class="glow-button px-8 py-3 text-white font-semibold rounded-full">
+                    Comenzar Ahora
+                </button>
+                
+                
+            </div>
+        </div>
+
+        <!-- Services Section -->
+        <section class="py-20 px-4 bg-gradient-to-b from-blue-50 to-white">
+            <div class="container mx-auto">
+                <h2 class="text-3xl font-bold text-center mb-16 text-blue-900">Nuestros Servicios</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                    <a href="#lecciones" class="card rounded-2xl p-8 text-center cursor-pointer">
+                        <div class="feature-icon">🎯</div>
+                        <h3 class="text-xl font-bold mb-4 text-blue-900">Aprendizaje Interactivo</h3>
+                        <p class="text-blue-700">Lecciones dinámicas y ejercicios prácticos que hacen el aprendizaje divertido y efectivo</p>
+                    </a>
+
+                    <div class="card rounded-2xl p-8 text-center">
+                        <div class="feature-icon">🎮</div>
+                        <h3 class="text-xl font-bold mb-4 text-blue-900">Práctica Gamificada</h3>
+                        <p class="text-blue-700">Gana puntos y medallas mientras aprendes, manteniéndote motivado en tu journey</p>
+                    </div>
+
+                    <div class="card rounded-2xl p-8 text-center">
+                        <div class="feature-icon">📱</div>
+                        <h3 class="text-xl font-bold mb-4 text-blue-900">Acceso Flexible</h3>
+                        <p class="text-blue-700">Aprende a tu propio ritmo, desde cualquier dispositivo y en cualquier momento</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lessons Section -->
+        <section id="lecciones" class="py-20 px-4">
+            <div class="container mx-auto">
+                <h2 class="text-3xl font-bold text-center mb-16 text-blue-900">Lecciones Disponibles</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="lesson-card">
+                        <div class="lesson-title">Saludos</div>
+                        <div class="lesson-content">Aprende a saludar en Nasa Yuwe y conoce las formas de dirigirse a diferentes personas.</div>
+                        <div class="lesson-actions">
+                            <button class="glow-button text-white font-medium py-2 px-4 rounded-full">
+                                Iniciar Lección
+                            </button>
+                            <button class="text-blue-600 font-medium hover:underline">
+                                Práctica
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="lesson-card">
+                        <div class="lesson-title">Números</div>
+                        <div class="lesson-content">Aprende a contar en Nasa Yuwe y familiarízate con los diferentes sistemas numéricos.</div>
+                        <div class="lesson-actions">
+                            <button class="glow-button text-white font-medium py-2 px-4 rounded-full">
+                                Iniciar Lección
+                            </button>
+                            <button class="text-blue-600 font-medium hover:underline">
+                                Práctica
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="lesson-card">
+                        <div class="lesson-title">Colores</div>
+                        <div class="lesson-content">Descubre los nombres de los colores en Nasa Yuwe y aprende a describirlos.</div>
+                        <div class="lesson-actions">
+                            <button class="glow-button text-white font-medium py-2 px-4 rounded-full">
+                                Iniciar Lección
+                            </button>
+                            <button class="text-blue-600 font-medium hover:underline">
+                                Práctica
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="lesson-card">
+                        <div class="lesson-title">Familia</div>
+                        <div class="lesson-content">Aprende los términos para referirte a los miembros de tu familia en Nasa Yuwe.</div>
+                        <div class="lesson-actions">
+                            <button class="glow-button text-white font-medium py-2 px-4 rounded-full">
+                                Iniciar Lección
+                            </button>
+                            <button class="text-blue-600 font-medium hover:underline">
+                                Práctica
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="lesson-card">
+                        <div class="lesson-title">Naturaleza</div>
+                        <div class="lesson-content">Descubre el vocabulario relacionado con la naturaleza y el medio ambiente en Nasa Yuwe.</div>
+                        <div class="lesson-actions">
+                            <button class="glow-button text-white font-medium py-2 px-4 rounded-full">
+                                Iniciar Lección
+                            </button>
+                            <button class="text-blue-600 font-medium hover:underline">
+                                Práctica
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="lesson-card">
+                        <div class="lesson-title">Verbos Básicos</div>
+                        <div class="lesson-content">Aprende los verbos más comunes en Nasa Yuwe y cómo utilizarlos en oraciones sencillas.</div>
+                        <div class="lesson-actions">
+                            <button class="glow-button text-white font-medium py-2 px-4 rounded-full">
+                                Iniciar Lección
+                            </button>
+                            <button class="text-blue-600 font-medium hover:underline">
+                                Práctica
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+               <!-- Licenses Section -->
+               <section class="py-20 px-4 bg-blue-50">
+                <div class="container mx-auto">
+                    <h2 class="text-3xl font-bold text-center mb-16 text-blue-900">Planes Disponibles</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                        <div class="card rounded-2xl p-8 text-center">
+                            <h3 class="text-2xl font-bold mb-4 text-blue-900">Básica</h3>
+                            <p class="price-tag text-4xl mb-8">$60.000</p>
+                            <ul class="text-left space-y-4 mb-8">
+                                <li class="flex items-center text-blue-700">
+                                    <span class="text-blue-500 mr-2">✓</span>
+                                    Acceso a lecciones básicas
+                                </li>
+                                <li class="flex items-center text-blue-700">
+                                    <span class="text-blue-500 mr-2">✓</span>
+                                    Práctica limitada
+                                </li>
+                                <li class="flex items-center text-blue-700">
+                                    <span class="text-blue-500 mr-2">✓</span>
+                                    Soporte por email
+                                </li>
+                            </ul>
+                            <button class="glow-button text-white font-bold py-3 px-6 rounded-full w-full">
+                                Seleccionar
+                            </button>
+                        </div>
+    
+                        <div class="card rounded-2xl p-8 text-center transform scale-105 shadow-2xl border-blue-400">
+                            <div class="absolute top-0 right-0 bg-blue-500 text-white py-1 px-4 rounded-tr-2xl rounded-bl-2xl text-sm">
+                                Más Popular
+                            </div>
+                            <h3 class="text-2xl font-bold mb-4 text-blue-900">Estándar</h3>
+                            <p class="price-tag text-4xl mb-8">$70.000</p>
+                            <ul class="text-left space-y-4 mb-8">
+                                <li class="flex items-center text-blue-700">
+                                    <span class="text-blue-500 mr-2">✓</span>
+                                    Todo lo básico
+                                </li>
+                                <li class="flex items-center text-blue-700">
+                                    <span class="text-blue-500 mr-2">✓</span>
+                                    Práctica ilimitada
+                                </li>
+                                <li class="flex items-center text-blue-700">
+                                    <span class="text-blue-500 mr-2">✓</span>
+                                    Recursos descargables
+                                </li>
+                            </ul>
+                            <button class="glow-button text-white font-bold py-3 px-6 rounded-full w-full">
+                                Seleccionar
+                            </button>
+                        </div>
+    
+                        <div class="card rounded-2xl p-8 text-center">
+                            <h3 class="text-2xl font-bold mb-4 text-blue-900">Premium</h3>
+                            <p class="price-tag text-4xl mb-8">$100.000</p>
+                            <ul class="text-left space-y-4 mb-8">
+                                <li class="flex items-center text-blue-700">
+                                    <span class="text-blue-500 mr-2">✓</span>
+                                    Todo lo estándar
+                                </li>
+                                <li class="flex items-center text-blue-700">
+                                    <span class="text-blue-500 mr-2">✓</span>
+                                    Tutoría personalizada
+                                </li>
+                                <li class="flex items-center text-blue-700">
+                                    <span class="text-blue-500 mr-2">✓</span>
+                                    Contenido exclusivo
+                                </li>
+                            </ul>
+                            <button class="glow-button text-white font-bold py-3 px-6 rounded-full w-full">
+                                Seleccionar
+                            </button>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+            </section>
+    
+            <!-- Back to Top Button -->
+            <button 
+                onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+                class="back-to-top glow-button text-white p-4 rounded-full"
+            >
+                ⬆️
+            </button>
+        </div>
+    
+        <script>
+            window.onscroll = function() {
+                const backToTopButton = document.querySelector('.back-to-top');
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    backToTopButton.style.display = "block";
+                } else {
+                    backToTopButton.style.display = "none";
+                }
+            };
+        </script>
+        
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-12">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-sm">&copy; 2024 Aprende Nasa Yuwe. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    </body>
+    </html>

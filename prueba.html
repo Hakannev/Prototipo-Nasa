@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aprende Nasa Yuwe, la lengua ancestral del pueblo Nasa. Descubre nuestra cultura y tradiciones.">
+    <title>Nasa Yuwe - Aprende la lengua ancestral</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes shine {
+            0% { background-position: -100% 50%; }
+            100% { background-position: 200% 50%; }
+        }
+
+        .gradient-background {
+            background: linear-gradient(120deg, #1a365d, #2563eb, #1e40af);
+            background-size: 200% 200%;
+            animation: gradientBG 15s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .card {
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .shine {
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            background-size: 200% 100%;
+            animation: shine 3s infinite;
+        }
+
+        .glow-button {
+            background: linear-gradient(45deg, #2563eb, #1e40af);
+            border-radius: 9999px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glow-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(37, 99, 235, 0.5);
+        }
+
+        .glow-button:before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+            transform: scale(0);
+            transition: transform 0.5s ease-out;
+        }
+
+        .glow-button:hover:before {
+            transform: scale(1);
+        }
+
+        .progress-bar {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .progress-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            animation: progressShine 2s infinite;
+        }
+
+        @keyframes progressShine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navbar -->
+    <nav class="fixed w-full bg-white shadow-md z-50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold text-blue-900">Nasa Yuwe</div>
+                <div class="flex items-center space-x-6">
+                    <button onclick="window.location.href='index.html'" class="glow-button px-8 py-3 text-white font-semibold rounded-full">Volver a Inicio</button>
+                    <a href="#" class="text-blue-600 hover:text-blue-800">Lecciones</a>
+                    <a href="#" class="text-blue-600 hover:text-blue-800">Cultura</a>
+                    <button class="glow-button px-6 py-2 text-white">Iniciar Sesión</button>
+                    
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Demo Section -->
+    <section class="pt-24 pb-20 px-4 gradient-background text-white">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-16">Aprende Nasa Yuwe de Forma Interactiva</h2>
+            <div class="card p-8 max-w-2xl mx-auto backdrop-blur-lg bg-white/90">
+                <div class="text-blue-900">
+                    <h3 class="text-2xl font-bold mb-4">Palabra del día</h3>
+                    <div class="flex justify-between items-center mb-8">
+                        <div>
+                            <p class="text-4xl font-bold mb-2">Ewçxa ma'kwe Pe'te</p>
+                            <p class="text-xl">"Buenos días"</p>
+                            <p class="text-sm text-gray-600 mt-2">Usado para saludar por la mañana</p>
+                        </div>
+                        <button class="glow-button p-6 rounded-full text-2xl">
+                            🔊
+                        </button>
+                    </div>
+                    <div class="space-y-4">
+                        <button class="glow-button w-full py-4 text-white font-semibold">
+                            Practicar Pronunciación
+                        </button>
+                        <button class="border-2 border-blue-600 text-blue-600 w-full py-4 rounded-full hover:bg-blue-50 font-semibold transition-colors">
+                            Ver más ejemplos
+                        </button>
+             
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="card p-8 shine text-center">
+                    <div class="text-5xl font-bold text-blue-600 mb-3">5,000+</div>
+                    <div class="text-gray-600 text-lg">Estudiantes Activos</div>
+                </div>
+                <div class="card p-8 shine text-center">
+                    <div class="text-5xl font-bold text-blue-600 mb-3">1,000+</div>
+                    <div class="text-gray-600 text-lg">Palabras y Frases</div>
+                </div>
+                <div class="card p-8 shine text-center">
+                    <div class="text-5xl font-bold text-blue-600 mb-3">50+</div>
+                    <div class="text-gray-600 text-lg">Lecciones</div>
+                </div>
+                <div class="card p-8 shine text-center">
+                    <div class="text-5xl font-bold text-blue-600 mb-3">4.8★</div>
+                    <div class="text-gray-600 text-lg">Calificación Promedio</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Progress Section -->
+    <section class="py-16 bg-blue-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16 text-blue-900">Tu Progreso</h2>
+            <div class="card p-8 max-w-2xl mx-auto">
+                <div class="mb-8">
+                    <div class="flex justify-between mb-2">
+                        <span class="text-blue-900 font-bold">Nivel Actual</span>
+                        <span class="text-blue-600 font-semibold">Intermedio</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-3 progress-bar">
+                        <div class="bg-blue-600 h-full rounded-full" style="width: 20%"></div>
+                    </div>
+                    <div class="text-sm text-gray-600 mt-2 text-right">20% completado</div>
+                </div>
+                <div class="grid grid-cols-3 gap-6">
+                    <div class="card p-6 bg-blue-50 rounded-lg text-center">
+                        <div class="text-3xl font-bold text-blue-900 mb-1">24</div>
+                        <div class="text-blue-600">Lecciones</div>
+                    </div>
+                    <div class="card p-6 bg-blue-50 rounded-lg text-center">
+                        <div class="text-3xl font-bold text-blue-900 mb-1">12</div>
+                        <div class="text-blue-600">Horas</div>
+                    </div>
+                    <div class="card p-6 bg-blue-50 rounded-lg text-center">
+                        <div class="text-3xl font-bold text-blue-900 mb-1">180</div>
+                        <div class="text-blue-600">Palabras</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- Cultural Features -->
+<section class="py-20 px-4 bg-white">
+    <div class="container mx-auto">
+        <h2 class="text-4xl font-bold text-center mb-16 text-blue-900">Descubre Nuestra Cultura</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Tradiciones -->
+            <div class="card p-6 hover:scale-105 transition-transform">
+                <div class="aspect-w-16 aspect-h-9 mb-4">
+                    <img src="../nasa/img/tradiciones.jpeg" 
+                         alt="Tradiciones Nasa" 
+                         class="w-full h-48 object-cover rounded-lg">
+                </div>
+                <h3 class="text-xl font-bold text-blue-900 mb-2">Tradiciones</h3>
+                <p class="text-blue-600">Conoce nuestras costumbres ancestrales y rituales sagrados</p>
+            </div>
+
+            <!-- Tejidos -->
+            <div class="card p-6 hover:scale-105 transition-transform">
+                <div class="aspect-w-16 aspect-h-9 mb-4">
+                    <img src="../nasa/img/tejido.jpeg" 
+                         alt="Tejidos Tradicionales" 
+                         class="w-full h-48 object-cover rounded-lg">
+                </div>
+                <h3 class="text-xl font-bold text-blue-900 mb-2">Tejidos</h3>
+                <p class="text-blue-600">Arte ancestral en cada hebra de nuestros tejidos tradicionales</p>
+            </div>
+
+            <!-- Gastronomía -->
+            <div class="card p-6 hover:scale-105 transition-transform">
+                <div class="aspect-w-16 aspect-h-9 mb-4">
+                    <img src="../nasa/img/gastronomia.jpeg" 
+                         alt="Gastronomía Nasa" 
+                         class="w-full h-48 object-cover rounded-lg">
+                </div>
+                <h3 class="text-xl font-bold text-blue-900 mb-2">Gastronomía</h3>
+                <p class="text-blue-600">Sabores ancestrales de nuestra cocina tradicional</p>
+            </div>
+
+            <!-- Medicina Tradicional -->
+            <div class="card p-6 hover:scale-105 transition-transform">
+                <div class="aspect-w-16 aspect-h-9 mb-4">
+                    <img src="../nasa/img/medicina.jpeg" 
+                         alt="Medicina Tradicional" 
+                         class="w-full h-48 object-cover rounded-lg">
+                </div>
+                <h3 class="text-xl font-bold text-blue-900 mb-2">Medicina</h3>
+                <p class="text-blue-600">Sabiduría ancestral para la salud y el bienestar</p>
+            </div>
+
+            <!-- Música -->
+            <div class="card p-6 hover:scale-105 transition-transform">
+                <div class="aspect-w-16 aspect-h-9 mb-4">
+                    <img src="../nasa/img/musica.jpeg" 
+                         alt="Música Nasa" 
+                         class="w-full h-48 object-cover rounded-lg">
+                </div>
+                <h3 class="text-xl font-bold text-blue-900 mb-2">Música</h3>
+                <p class="text-blue-600">Ritmos y sonidos que cuentan nuestra historia</p>
+            </div>
+
+            <!-- Danza -->
+            <div class="card p-6 hover:scale-105 transition-transform">
+                <div class="aspect-w-16 aspect-h-9 mb-4">
+                    <img src="../nasa/img/danza.jpeg" 
+                         alt="Danzas Tradicionales" 
+                         class="w-full h-48 object-cover rounded-lg">
+                </div>
+                <h3 class="text-xl font-bold text-blue-900 mb-2">Danza</h3>
+                <p class="text-blue-600">Movimientos que expresan nuestra conexión espiritual</p>
+            </div>
+
+            <!-- Territorio -->
+            <div class="card p-6 hover:scale-105 transition-transform">
+                <div class="aspect-w-16 aspect-h-9 mb-4">
+                    <img src="../nasa/img/territorio.jpeg" 
+                         alt="Territorio Nasa" 
+                         class="w-full h-48 object-cover rounded-lg">
+                </div>
+                <h3 class="text-xl font-bold text-blue-900 mb-2">Territorio</h3>
+                <p class="text-blue-600">Nuestra tierra sagrada y su significado ancestral</p>
+            </div>
+
+            <!-- Cosmovisión -->
+            <div class="card p-6 hover:scale-105 transition-transform">
+                <div class="aspect-w-16 aspect-h-9 mb-4">
+                    <img src="../nasa/img/cosmovision.jpeg" 
+                         alt="Cosmovisión Nasa" 
+                         class="w-full h-48 object-cover rounded-lg">
+                </div>
+                <h3 class="text-xl font-bold text-blue-900 mb-2">Cosmovisión</h3>
+                <p class="text-blue-600">Nuestra forma de entender y relacionarnos con el universo</p>
+            </div>
+        </div>
+
+        <!-- Botón para ver más -->
+        <div class="text-center mt-12">
+            <button class="glow-button px-8 py-3 text-white font-semibold rounded-full">
+                Ver más sobre nuestra cultura
+            </button>
+        </div>
+    </div>
+
+</section>
+    </section>
+
+            <!-- Back to Top Button -->
+            <button 
+                onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+                class="back-to-top glow-button text-white p-4 rounded-full"
+            >
+                ⬆️
+            </button>
+    <!-- Gamification Elements -->
+    <div class="fixed top-24 right-4 flex flex-col gap-4 z-40">
+        <div class="card p-4 text-center transform hover:scale-110 transition-transform">
+            <div class="text-3xl mb-2">🏆</div>
+            <div class="text-blue-900 font-bold">Nivel 1 </div>
+        </div>
+        <div class="card p-4 text-center transform hover:scale-110 transition-transform">
+            <div class="text-3xl mb-2">⭐</div>
+            <div class="text-blue-900 font-bold">500 pts</div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Nasa Yuwe</h3>
+                    <p class="text-blue-200">Preservando nuestra lengua ancestral para las futuras generaciones.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Enlaces Rápidos</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-blue-200 hover:text-white">Inicio</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-white">Lecciones</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-white">Cultura</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-white">Contacto</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contacto</h3>
+                    <p class="text-blue-200">wwww.nasayuweweb.com</p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-blue-200 hover:text-white">Facebook</a>
+                        <a href="#" class="text-blue-200 hover:text-white">Twitter</a>
+                        <a href="#" class="text-blue-200 hover:text-white">Instagram</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-blue-800 mt-8 pt-8 text-center text-blue-200">
+                <p>&copy; 2024 Nasa Yuwe. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+</html>
